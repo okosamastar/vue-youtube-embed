@@ -27,6 +27,9 @@ export default {
     host: {
       type: String,
       default: 'https://www.youtube.com'
+    },
+    iframeId: {
+      type: String
     }
   },
   render (h) {
@@ -44,7 +47,7 @@ export default {
   data () {
     pid += 1
     return {
-      elementId: `youtube-player-${pid}`,
+      elementId: this.iframeId ? this.iframeId : `youtube-player-${pid}`,
       player: {}
     }
   },
